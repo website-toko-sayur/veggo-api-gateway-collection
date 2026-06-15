@@ -1,0 +1,31 @@
+info:
+  name: edit category
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{host-veggo-api-gateway}}/api/v1/admin/categories/:id"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+         "name": "Chicken & Meat",
+          "icon": "http://localhost:9000/veggo-product-service/public/uploads/b957dfdd-1f22-44ec-bc47-62ee4573d0a1_1781514539.png",
+          "status": "Published",
+          "description": "Berbagai pilihan daging ayam, sapi, kambing, dan produk olahan segar berkualitas.",
+          "parent_id": null
+      }
+  auth:
+    type: bearer
+    token: "{{access_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

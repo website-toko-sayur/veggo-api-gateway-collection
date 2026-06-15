@@ -1,0 +1,24 @@
+info:
+  name: sign up
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{host-veggo-api-gateway}}/api/v1/signup"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "adit",
+        "email": "adit@mail.com",
+        "password": "customer123",
+        "password_confirmation": "customer123"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

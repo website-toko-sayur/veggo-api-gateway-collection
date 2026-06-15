@@ -1,0 +1,45 @@
+info:
+  name: get products
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{host-veggo-api-gateway}}/api/v1/admin/products?search=&orderBy=&orderType=&page=&limit=&startPrice=&endPrice=&categorySlug=&status="
+  params:
+    - name: search
+      value: ""
+      type: query
+    - name: orderBy
+      value: ""
+      type: query
+    - name: orderType
+      value: ""
+      type: query
+    - name: page
+      value: ""
+      type: query
+    - name: limit
+      value: ""
+      type: query
+    - name: startPrice
+      value: ""
+      type: query
+    - name: endPrice
+      value: ""
+      type: query
+    - name: categorySlug
+      value: ""
+      type: query
+    - name: status
+      value: ""
+      type: query
+  auth:
+    type: bearer
+    token: "{{access_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

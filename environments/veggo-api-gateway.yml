@@ -1,0 +1,6 @@
+name: veggo-api-gateway
+variables:
+  - name: host-veggo-api-gateway
+    value: http://localhost:8080
+  - name: access_token
+    value: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODE1OTU0OTUsImlzcyI6InVzZXItc2VydmljZSIsInVzZXJfaWQiOjV9.Rwb2YHAzFqU15F-ndsjxruRb671--6lGKshgEIYAsXA

@@ -1,0 +1,44 @@
+info:
+  name: create product
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{host-veggo-api-gateway}}/api/v1/admin/products"
+  body:
+    type: json
+    data: |-
+      {
+          "product_name": "Daging Sapi Import",
+          "category_slug": "chicken-&-meat",
+          "unit": "gram",
+          "product_description": "Daging Sapi Segar Premium adalah pilihan terbaik untuk hidangan berkualitas tinggi, dipotong dengan teknik profesional dan disimpan dalam suhu optimal untuk menjaga kesegaran, kelembutan, serta cita rasa aslinya. Daging sapi kami berasal dari ternak sehat yang dipelihara secara alami, kaya akan protein, zat besi, vitamin B12, dan nutrisi penting untuk mendukung energi, pertumbuhan otot, dan kesehatan tubuh.Keunggulan Produk:✅ Kualitas Premium: Dipotong higienis, tekstur lembut, dan bebas dari bahan pengawet.✅ Kaya Nutrisi: Sumber protein tinggi, zat besi, zinc, dan vitamin B kompleks untuk stamina dan pemulihan otot.✅ Serbaguna: Cocok untuk steak, rendang, semur, bakso, sate, atau hidangan lainnya.✅ Segar & Aman: Proses distribusi cepat dengan cold chain system untuk menjaga kesegaran.Tips Penyimpanan:Simpan di freezer (-18°C) untuk penyimpanan jangka panjang.Cairkan secara alami di kulkas bawah sebelum dimasak untuk mempertahankan kelembutan.Nikmati hidangan lezat dan bergizi dengan Daging Sapi Segar Premium untuk santapan keluarga yang istimewa!Tersedia dalam berbagai potongan (sirloin, tenderloin, daging giling, iga, dll.) dan kemasan vakum yang praktis.Pesan sekarang dan dapatkan kualitas daging terbaik!",
+          "status": "ACTIVE",
+          "variant": 2,
+          "variant_detail": [
+              {
+                  "stock": 10,
+                  "weight": 250,
+                  "product_image": "http://localhost:9000/veggo-product-service/public/uploads/226e79fa-0932-4c81-a49f-b1928a6336a6_1781514841.png",
+                  "sale_price": 70000,
+                  "reguler_price": 65000
+              },
+              {
+                  "stock": 10,
+                  "weight": 500,
+                  "product_image": "http://localhost:9000/veggo-product-service/public/uploads/da3d58c4-82ff-4a89-b9a3-5feef0bdc597_1781514890.png",
+                  "sale_price": 100000,
+                  "reguler_price": 80000
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{access_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

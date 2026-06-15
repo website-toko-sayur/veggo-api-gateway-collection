@@ -1,0 +1,36 @@
+info:
+  name: sign in
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{host-veggo-api-gateway}}/api/v1/signin"
+  body:
+    type: json
+    data: |-
+      {
+      //   "email": "adit@mail.com",
+      //   "password": "aditpagar123"
+        
+        "email": "superadmin@mail.com",
+        "password": "admin123"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const response = res.getBody();
+
+        if (response?.data?.access_token) {
+            bru.setEnvVar("access_token", response.data.access_token);
+            console.log("Access token saved");
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

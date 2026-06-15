@@ -1,0 +1,7 @@
+info:
+  name: order-service-auth
+  type: folder
+  seq: 8
+
+request:
+  auth: inherit

@@ -1,0 +1,7 @@
+info:
+  name: product-service-admin
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit

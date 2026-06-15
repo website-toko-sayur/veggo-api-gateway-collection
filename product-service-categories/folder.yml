@@ -1,0 +1,7 @@
+info:
+  name: product-service-categories
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

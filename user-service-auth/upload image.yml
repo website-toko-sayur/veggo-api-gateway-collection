@@ -1,0 +1,24 @@
+info:
+  name: upload image
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{host-veggo-api-gateway}}/api/v1/auth/profile/image-upload"
+  body:
+    type: multipart-form
+    data:
+      - name: photo
+        type: file
+        value:
+          - C:\Users\xylo\Documents\adit\random-image\ghostty.png
+  auth:
+    type: bearer
+    token: "{{access_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

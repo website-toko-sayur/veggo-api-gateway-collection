@@ -1,0 +1,27 @@
+info:
+  name: create category
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{host-veggo-api-gateway}}/api/v1/admin/categories"
+  body:
+    type: json
+    data: |-
+      {
+          "name": "Snacks & Biscuits",
+          "icon": "https://your-storage.com/uploads/snacks-biscuits.jpg",
+          "status": "Published",
+          "description": "Camilan dan biskuit favorit untuk menemani waktu santai bersama keluarga.",
+          "parent_id": null
+      }
+  auth:
+    type: bearer
+    token: "{{access_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
