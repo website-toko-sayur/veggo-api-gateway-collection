@@ -1,0 +1,21 @@
+info:
+  name: del cart
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{host-veggo-api-gateway}}/api/v1/auth/cart?product_id=3"
+  params:
+    - name: product_id
+      value: "3"
+      type: query
+  auth:
+    type: bearer
+    token: "{{access_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
